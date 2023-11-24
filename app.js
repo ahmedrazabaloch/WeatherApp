@@ -30,7 +30,7 @@ document.querySelector(".searchIcon").addEventListener("click", () => {
       .then((data) => {
         document.getElementById("cityName").innerHTML = data.name || "Karachi";
         document.getElementById("temperature").innerHTML =
-          Math.round(data.main.temp) + " °C";
+          Math.round(data.main.temp) + "°C";
         document.getElementById("humidity").innerHTML = data.main.humidity;
         document.getElementById("wind").innerHTML = data.wind.speed;
         document.getElementById("feel").innerHTML = data.main.feels_like;
@@ -74,7 +74,7 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
       let { main, wind, visibility, name } = data;
       document.getElementById("cityName").innerHTML = name;
       document.getElementById("temperature").innerHTML =
-        Math.round(main.temp) + " °C";
+        Math.round(main.temp) + "°C";
       document.getElementById("humidity").innerHTML = main.humidity;
       document.getElementById("wind").innerHTML = wind.speed;
       document.getElementById("feel").innerHTML = main.feels_like;
