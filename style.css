@@ -117,7 +117,7 @@
   );
 }
 
-.search__icon {
+.searchIcon {
   cursor: pointer;
   width: 50px;
   aspect-ratio: 1;
@@ -129,11 +129,11 @@
   margin-right: 10px;
 }
 
-.search__icon:hover {
+.searchIcon:hover {
   border-left: 3px solid white;
 }
 
-.search__icon path {
+.searchIcon path {
   fill: white;
 }
 /* input field end */
@@ -154,7 +154,7 @@
   width: 70%;
   padding-top: 40px;
 }
-.data div {
+.data > div {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;

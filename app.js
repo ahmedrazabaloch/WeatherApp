@@ -1,21 +1,34 @@
-document.querySelector(".search__icon").addEventListener("click", () => {
+document.querySelector(".searchIcon").addEventListener("click", () => {
   let inputValue = document.querySelector(".input");
-  let cityName = document.getElementById("cityName");
-  cityName.innerHTML = inputValue.value;
-  const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
-  const keyAPI = "230d49f0d859fc7a6b1ae5ce71bc7c1f";
-
+  const searchAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f&q=${inputValue.value}`;
   if (inputValue.value.trim() === "") {
-    alert("Please enter a city name");
+    Swal.fire({
+      title: `Please enter a city name`,
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `,
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `,
+      },
+    });
   } else {
     let weatherData = new Promise((resolve, reject) => {
-      fetch(apiURL + `&q=${cityName.textContent}&appid=${keyAPI}`)
+      fetch(searchAPI)
         .then((res) => res.json())
         .then((data) => resolve(data))
         .catch((err) => reject(err));
     });
     weatherData
       .then((data) => {
+        document.getElementById("cityName").innerHTML = data.name || "Karachi";
         document.getElementById("temperature").innerHTML =
           Math.round(data.main.temp) + " °C";
         document.getElementById("humidity").innerHTML = data.main.humidity;
@@ -26,21 +39,40 @@ document.querySelector(".search__icon").addEventListener("click", () => {
         document.getElementById("temp").innerHTML = Math.round(data.main.temp);
         console.log("object ==>", data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err) {
+          Swal.fire({
+            title: `Please enter a valid city name`,
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `,
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `,
+            },
+          });
+        }
+      });
     inputValue.value = "";
   }
 });
-
+// Get Current Loction Then Show There Weather Forecast
 let navi = navigator.geolocation.getCurrentPosition((location) => {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
-  let navAPI = "https://api.openweathermap.org/data/2.5/weather?units=metric";
-  const keyAPI = "&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f";
-
-  fetch(navAPI + `&lat=${latitude}&lon=${longitude}` + keyAPI)
+  const locationAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f`;
+  fetch(locationAPI)
     .then((res) => res.json())
     .then((data) => {
-      let { main, wind, visibility } = data;
+      let { main, wind, visibility, name } = data;
+      document.getElementById("cityName").innerHTML = name;
       document.getElementById("temperature").innerHTML =
         Math.round(main.temp) + " °C";
       document.getElementById("humidity").innerHTML = main.humidity;
