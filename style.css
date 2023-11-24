@@ -118,6 +118,7 @@
 }
 
 .search__icon {
+  cursor: pointer;
   width: 50px;
   aspect-ratio: 1;
   border-left: 2px solid white;
@@ -141,10 +142,11 @@
 .mainContainer {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  /* align-items: center; */
+  /* padding: 20px 0; */
+  align-items: end;
   position: relative;
   transition: all 0.3s linear;
+  gap: 5%;
 }
 .data {
   text-align: center;
@@ -180,6 +182,7 @@
 p#weatherCondition {
   font-size: 2.5em;
 }
-/* .pictureData {
-  width: 30%;
-} */
+.pictureData {
+  width: 28%;
+  text-align: center;
+}
