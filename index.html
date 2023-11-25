@@ -3,78 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather-App</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="box">
-        <!-- input filed -->
-        <header class="inputField">
-          <div class="nts-container">
-            <div class="search-container">
-              <input class="input" type="search" />
-              <svg viewBox="0 0 24 24" class="searchIcon">
-                <g>
-                  <path
-                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
+    <div class="widget">
+      <form type="submit" id="form">
+        <input type="search" placeholder="Enter a City name" id="inputSearch" />
+      </form>
+      <div class="flex">
+        <div class="panel">
+          <div class="date">Monday, 27 Nov 2023</div>
+          <div id="city">Karachi</div>
+          <div class="temp">
+            <img src="images/cloud.png" alt="" width="60" />
+            <span id="temperature">23</span>&deg;
           </div>
-        </header>
-        <main class="mainContainer">
-          <div class="data">
-            <div>
-              <p>Temperature</p>
-              <div>
-                <img src="images/hot.png" />
-              </div>
-              <p id="temperature"></p>
-            </div>
-            <div>
-              <p>Humidity</p>
-              <div>
-                <img src="images/humidity.png" />
-              </div>
-              <p id="humidity"></p>
-            </div>
-            <div>
-              <p>Wind</p>
-              <div>
-                <img src="images/wind.png" />
-              </div>
-              <p id="wind"></p>
-            </div>
-            <div>
-              <p>Feel Like</p>
-              <div>
-                <img src="images/temperature.png" />
-              </div>
-              <p id="feel"></p>
-            </div>
-            <div>
-              <p>Visibility</p>
-              <div>
-                <img src="images/visibility.png" />
-              </div>
-              <p id="visibility"></p>
-            </div>
-          </div>
-          <div class="pictureData">
-            <div class="imgDiv">
-              <img src="images/partly-cloudy-day.svg" id="img" />
-            </div>
-            <p id="temp"></p>
-            <h1 id="cityName"></h1>
-          </div>
-        </main>
+        </div>
+        <div class="right-panel panel">
+          <img src="images/mazar-e-quaid.png" alt="" width="300px" />
+        </div>
+      </div>
+      <div class="tempContainer flex">
+        <div>
+          <div>Feel Like</div>
+          <div><img src="images/global-warming.gif" alt="" /></div>
+          <div id="feel">17.9</div>
+        </div>
+        <div>
+          <div>Wind</div>
+          <div><img src="images/wind.gif" alt="" /></div>
+          <div id="wind">4.12</div>
+        </div>
+        <div>
+          <div>Humidity</div>
+          <div><img src="images/drop.gif" alt="" /></div>
+          <div id="humidity">77</div>
+        </div>
+        <div>
+          <div>Visibility</div>
+          <div><img src="images/eye.gif" alt="" /></div>
+          <div id="visibility">2</div>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>

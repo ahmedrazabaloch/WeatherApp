@@ -1,6 +1,5 @@
-document.getElementById("form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const inputValue = document.getElementById("inputSearch");
+document.querySelector(".searchIcon").addEventListener("click", () => {
+  let inputValue = document.querySelector(".input");
   const searchAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f&q=${inputValue.value}`;
   if (inputValue.value.trim() === "") {
     Swal.fire({
@@ -29,19 +28,18 @@ document.getElementById("form").addEventListener("submit", (event) => {
     });
     weatherData
       .then((data) => {
-        document.getElementById("city").innerHTML = data.name || "Karachi";
-        document.getElementById("temperature").innerHTML = Math.round(
-          data.main.temp
-        );
+        document.getElementById("cityName").innerHTML = data.name || "Karachi";
+        document.getElementById("temperature").innerHTML =
+          Math.round(data.main.temp) + "°C";
         document.getElementById("humidity").innerHTML = data.main.humidity;
         document.getElementById("wind").innerHTML = data.wind.speed;
         document.getElementById("feel").innerHTML = data.main.feels_like;
         document.getElementById("visibility").innerHTML =
           data.visibility / 1000 + " km";
+        document.getElementById("temp").innerHTML = Math.round(data.main.temp);
         console.log("object ==>", data);
       })
       .catch((err) => {
-        console.log(err);
         if (err) {
           Swal.fire({
             title: `Please enter a valid city name`,
@@ -62,11 +60,9 @@ document.getElementById("form").addEventListener("submit", (event) => {
           });
         }
       });
+    inputValue.value = "";
   }
-
-  document.getElementById("inputSearch").value = "";
 });
-
 // Get Current Loction Then Show There Weather Forecast
 let navi = navigator.geolocation.getCurrentPosition((location) => {
   let latitude = location.coords.latitude;
@@ -76,14 +72,15 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
     .then((res) => res.json())
     .then((data) => {
       let { main, wind, visibility, name } = data;
-
-      document.getElementById("city").innerHTML = name || "Karachi";
-      document.getElementById("temperature").innerHTML = Math.round(main.temp);
+      document.getElementById("cityName").innerHTML = name;
+      document.getElementById("temperature").innerHTML =
+        Math.round(main.temp) + "°C";
       document.getElementById("humidity").innerHTML = main.humidity;
-      document.getElementById("wind").innerHTML = wind.speed;
+      document.getElementById("wind").innerHTML = (wind.speed * 3.6).toFixed(2);
       document.getElementById("feel").innerHTML = main.feels_like;
       document.getElementById("visibility").innerHTML =
-        data.visibility / 1000 + " km";
+        visibility / 1000 + " km";
+      document.getElementById("temp").innerHTML = Math.round(main.temp);
     })
     .catch((err) => console.log(err));
 });
