@@ -19,9 +19,9 @@
 }
 .box {
   padding: 20px 50px 50px;
-  backdrop-filter: blur(30px);
-  background-color: rgba(65, 65, 65, 0.308);
-  border: 1px solid rgba(255, 255, 255, 0.089);
+  /* backdrop-filter: blur(30px); */
+  /* background-color: rgba(65, 65, 65, 0.308);
+  border: 1px solid rgba(255, 255, 255, 0.089); */
   border-radius: 20px;
   width: 60%;
   position: absolute;
@@ -29,6 +29,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+  background: url(images/pinkSky.webp);
+  background-position: cover;
 }
 
 /* input field start */
@@ -192,4 +194,3 @@ p#weatherCondition {
   text-align: center;
   position: relative;
 }
-

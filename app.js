@@ -76,7 +76,7 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
       document.getElementById("temperature").innerHTML =
         Math.round(main.temp) + "°C";
       document.getElementById("humidity").innerHTML = main.humidity;
-      document.getElementById("wind").innerHTML = wind.speed;
+      document.getElementById("wind").innerHTML = (wind.speed * 3.6).toFixed(2);
       document.getElementById("feel").innerHTML = main.feels_like;
       document.getElementById("visibility").innerHTML =
         visibility / 1000 + " km";
