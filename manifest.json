@@ -476,5 +476,6 @@
   ],
   "shortcuts": [],
   "id": "ahmedraza",
-  "lang": "en"
+  "lang": "en",
+  "prefer_related_applications": true
 }
