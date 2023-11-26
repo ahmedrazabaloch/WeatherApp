@@ -1,3 +1,11 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then((res) => console.log(res, "service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
+}
 setInterval(() => {
   document.querySelector(".date").innerHTML = moment().format(
     `dddd, hh:mm:ss<br/>MMMM D, YYYY`
@@ -45,7 +53,6 @@ document.getElementById("form").addEventListener("submit", (event) => {
         document.getElementById("visibility").innerHTML =
           data.visibility / 1000 + " km";
         const weatherCondition = data.weather[0].main;
-        console.log(weatherCondition);
 
         if (weatherCondition === "Clouds") {
           cloudImg.src = "./weatherConditionImg/cloudy-day.svg";
@@ -70,7 +77,6 @@ document.getElementById("form").addEventListener("submit", (event) => {
         } else {
           cloudImg.src = "./weatherConditionImg/clear-day.svg";
         }
-        console.log("object ==>", data);
       })
       .catch((err) => {
         console.log(err);
