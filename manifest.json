@@ -474,8 +474,12 @@
       "sizes": "1024x1024"
     }
   ],
-  "shortcuts": [],
   "id": "ahmedraza",
   "lang": "en",
-  "prefer_related_applications": true
+  "prefer_related_applications": true,
+  "web_apps": [
+    {
+      "web_app_identity": "https://wetheraap-ar.netlify.app/"
+    }
+  ]
 }
