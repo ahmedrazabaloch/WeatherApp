@@ -38,7 +38,7 @@ body {
 }
 
 .temp {
-  font-size: 81px;
+  font-size: 80px;
   color: rgba(0, 0, 0, 0.9);
   font-weight: 100;
 }
@@ -50,18 +50,22 @@ body {
 .right-panel {
   position: absolute;
   bottom: 95px;
-  left: 150px;
+  left: 185px;
 }
 .tempContainer {
   justify-content: space-between;
-  margin-top: 15px;
-  font-weight: 500;
+  margin-top: 14px;
+  font-weight: bold;
   text-align: center;
+  color: rgba(0, 0, 0, 0.5);
 }
 .tempContainer img {
   width: 32px;
   height: 32px;
   margin: 5px 0;
+}
+img#cloudImg {
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
 }
 #form input {
   width: 100%;

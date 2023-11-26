@@ -11,6 +11,7 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   </head>
   <body>
     <div class="widget">
@@ -19,15 +20,19 @@
       </form>
       <div class="flex">
         <div class="panel">
-          <div class="date">Monday, 27 Nov 2023</div>
+          <div class="date"></div>
           <div id="city">Karachi</div>
           <div class="temp">
-            <img src="images/cloud.png" alt="" width="60" />
+            <img
+              src="weatherConditionImg/clear-day.svg"
+              id="cloudImg"
+              width="80"
+            />
             <span id="temperature">23</span>&deg;
           </div>
         </div>
         <div class="right-panel panel">
-          <img src="images/mazar-e-quaid.png" alt="" width="300px" />
+          <img src="images/mazar-e-quaid.png" alt="" width="250px" />
         </div>
       </div>
       <div class="tempContainer flex">

@@ -1,5 +1,11 @@
+setInterval(() => {
+  document.querySelector(".date").innerHTML = moment().format(
+    `dddd, hh:mm:ss<br/>MMMM D, YYYY`
+  );
+}, 1000);
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
+  const cloudImg = document.getElementById("cloudImg");
   const inputValue = document.getElementById("inputSearch");
   const searchAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f&q=${inputValue.value}`;
   if (inputValue.value.trim() === "") {
@@ -38,6 +44,32 @@ document.getElementById("form").addEventListener("submit", (event) => {
         document.getElementById("feel").innerHTML = data.main.feels_like;
         document.getElementById("visibility").innerHTML =
           data.visibility / 1000 + " km";
+        const weatherCondition = data.weather[0].main;
+        console.log(weatherCondition);
+
+        if (weatherCondition === "Clouds") {
+          cloudImg.src = "./weatherConditionImg/cloudy-day.svg";
+        } else if (weatherCondition === "Clear") {
+          cloudImg.src = "./weatherConditionImg/clear-day.svg";
+        } else if (
+          weatherCondition === "Smoke" ||
+          weatherCondition === "Haze" ||
+          weatherCondition === "Dust" ||
+          weatherCondition === "Fog"
+        ) {
+          cloudImg.src = "./weatherConditionImg/day-smoke.svg";
+        } else if (weatherCondition === "Snow") {
+          cloudImg.src = "./weatherConditionImg/snow.svg";
+        } else if (
+          weatherCondition === "Rain" ||
+          weatherCondition === "Drizzle"
+        ) {
+          cloudImg.src = "./weatherConditionImg/day-rain.svg";
+        } else if (weatherCondition === "Thunderstorm") {
+          cloudImg.src = "./weatherConditionImg/thunderstorms-day-rain.svg";
+        } else {
+          cloudImg.src = "./weatherConditionImg/clear-day.svg";
+        }
         console.log("object ==>", data);
       })
       .catch((err) => {
@@ -84,6 +116,31 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
       document.getElementById("feel").innerHTML = main.feels_like;
       document.getElementById("visibility").innerHTML =
         data.visibility / 1000 + " km";
+      // Weather Condition Base Picture
+      const weatherCondition = data.weather[0].main;
+      if (weatherCondition === "Clouds") {
+        cloudImg.src = "./weatherConditionImg/cloudy-day.svg";
+      } else if (weatherCondition === "Clear") {
+        cloudImg.src = "./weatherConditionImg/clear-day.svg";
+      } else if (
+        weatherCondition === "Smoke" ||
+        weatherCondition === "Haze" ||
+        weatherCondition === "Dust" ||
+        weatherCondition === "Fog"
+      ) {
+        cloudImg.src = "./weatherConditionImg/day-smoke.svg";
+      } else if (weatherCondition === "Snow") {
+        cloudImg.src = "./weatherConditionImg/snow.svg";
+      } else if (
+        weatherCondition === "Rain" ||
+        weatherCondition === "Drizzle"
+      ) {
+        cloudImg.src = "./weatherConditionImg/day-rain.svg";
+      } else if (weatherCondition === "Thunderstorm") {
+        cloudImg.src = "./weatherConditionImg/thunderstorms-day-rain.svg";
+      } else {
+        cloudImg.src = "./weatherConditionImg/clear-day.svg";
+      }
     })
     .catch((err) => console.log(err));
 });
