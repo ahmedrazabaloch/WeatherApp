@@ -150,3 +150,12 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
     })
     .catch((err) => console.log(err));
 });
+// Next 5 day weather forecast
+// fetch(
+//   `https://api.openweathermap.org/data/2.5/forecast/daily?q=karachi,pk&cnt=3&appid=39d1d5f8783bdd2d2dad08c8aa4fb4b6`
+// )
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
