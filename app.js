@@ -164,12 +164,15 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
     })
     .catch((err) => console.log(err));
 });
-// Next 5 day weather forecast
-// fetch(
-//   `https://api.openweathermap.org/data/2.5/forecast/daily?q=karachi,pk&cnt=3&appid=39d1d5f8783bdd2d2dad08c8aa4fb4b6`
-// )
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
+
+// const cityName = "New York";
+// const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cityName)}`;
+
+// fetch(wikipediaUrl)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(`Introduction for ${cityName}:\n${data.extract}`);
 //   })
-//   .catch((err) => console.log(err));
+//   .catch(error => {
+//     console.error(`Error fetching Wikipedia data: ${error}`);
+//   });
