@@ -8,7 +8,7 @@ if ("serviceWorker" in navigator) {
 }
 setInterval(() => {
   document.querySelector(".date").innerHTML = moment().format(
-    `dddd, hh:mm:ss<br/>MMMM D, YYYY`
+    `MMMM D, YYYY || dddd, hh:mm:ss `
   );
 }, 1000);
 const inputValue = document.getElementById("inputSearch");
@@ -66,7 +66,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
         document.getElementById("visibility").innerHTML =
           data.visibility / 1000 + " km";
         const weatherCondition = data.weather[0].main;
-
+        document.getElementById("weatherCondi").innerHTML = weatherCondition;
         if (weatherCondition === "Clouds") {
           cloudImg.src = "./weatherConditionImg/cloudy-day.svg";
         } else if (weatherCondition === "Clear") {
@@ -134,9 +134,10 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
       document.getElementById("wind").innerHTML = wind.speed;
       document.getElementById("feel").innerHTML = main.feels_like;
       document.getElementById("visibility").innerHTML =
-        data.visibility / 1000 + " km";
+        visibility / 1000 + " km";
       // Weather Condition Base Picture
       const weatherCondition = data.weather[0].main;
+      document.getElementById("weatherCondi").innerHTML = weatherCondition;
       if (weatherCondition === "Clouds") {
         cloudImg.src = "./weatherConditionImg/cloudy-day.svg";
       } else if (weatherCondition === "Clear") {
