@@ -11,10 +11,23 @@ setInterval(() => {
     `dddd, hh:mm:ss<br/>MMMM D, YYYY`
   );
 }, 1000);
+const inputValue = document.getElementById("inputSearch");
+const btnImg = document.getElementById("btnImg");
+
+inputValue.addEventListener("input", () => {
+  if (inputValue.value !== "") {
+    btnImg.style.display = "block";
+  } else {
+    if (inputValue.value === "") {
+      btnImg.style.display = "none";
+    }
+  }
+});
+
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
+  btnImg.style.display = "none";
   const cloudImg = document.getElementById("cloudImg");
-  const inputValue = document.getElementById("inputSearch");
   const searchAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f&q=${inputValue.value}`;
   if (inputValue.value.trim() === "") {
     Swal.fire({

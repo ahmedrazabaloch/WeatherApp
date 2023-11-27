@@ -1,4 +1,3 @@
-const staticDevCoffee = "Weather_Forecast";
 const assets = [
   "/",
   "/index.html",
@@ -10,6 +9,7 @@ const assets = [
   "/images/global-warming.gif",
   "/images/mazar-e-quaid.png",
   "/images/wind.gif",
+  "/images/search-icon.png",
   "/weatherConditionImg/clear-day.svg",
   "/weatherConditionImg/cloudy-day.svg",
   "/weatherConditionImg/cloudy-night.svg",
