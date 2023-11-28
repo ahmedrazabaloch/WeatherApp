@@ -24,11 +24,10 @@ body {
 .discreption {
   padding: 25px 25px 30px;
   position: relative;
-  width: 330px;
+  /* width: 330px; */
   border-right: 5px double rgba(0, 0, 0, 0.3);
 }
 .discreption {
-  margin-top: 10%;
   text-align: justify;
   color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
@@ -39,6 +38,7 @@ body {
   color: rgba(0, 0, 0, 0.7);
   font-size: 3em;
   text-transform: uppercase;
+  text-align: center;
 }
 .date {
   font-size: 14px;
@@ -62,12 +62,6 @@ body {
 .flex {
   display: flex;
   justify-content: center;
-}
-
-.right-panel {
-  position: absolute;
-  bottom: 95px;
-  left: 185px;
 }
 .tempContainer {
   justify-content: space-between;
@@ -113,4 +107,42 @@ img#cloudImg {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
   text-transform: uppercase;
+}
+#summery::first-line {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+.cityImg {
+  display: flex;
+  justify-content: center;
+}
+img#cityImg {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 425px) {
+  .main_Container {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+    border-radius: unset;
+  }
+  .widget {
+    padding: 60px 20px;
+    border-right: none;
+    border-bottom: 5px double rgba(0, 0, 0, 0.3);
+  }
+  .discreption {
+    padding: 60px 20px;
+  }
+  .discreption > h1 {
+    padding: 20px;
+  }
+  img#cityImg {
+    height: auto;
+  }
 }

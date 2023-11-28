@@ -89,6 +89,18 @@ document.getElementById("form").addEventListener("submit", (event) => {
         } else {
           cloudImg.src = "./weatherConditionImg/clear-day.svg";
         }
+        // wikipedia summery
+        const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${data.name}`;
+        fetch(wikipediaUrl)
+          .then((response) => response.json())
+          .then((wikiData) => {
+            console.log(wikiData);
+            const wikiCityName = wikiData.extract.slice(0, 602);
+            document.getElementById("summery").innerHTML =
+              wikiCityName + " ......";
+            document.getElementById("cityImg").src =
+              wikiData.originalimage.source;
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -119,7 +131,6 @@ document.getElementById("form").addEventListener("submit", (event) => {
 
 // Get Current Loction Then Show There Weather Forecast
 let navi = navigator.geolocation.getCurrentPosition((location) => {
-  console.log(location);
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
   const locationAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f`;
