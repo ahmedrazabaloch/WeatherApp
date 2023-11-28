@@ -8,7 +8,7 @@ if ("serviceWorker" in navigator) {
 }
 setInterval(() => {
   document.querySelector(".date").innerHTML = moment().format(
-    `MMMM D, YYYY || dddd, hh:mm:ss `
+    `MMMM D, YYYY || ddd, hh:mm:ss `
   );
 }, 1000);
 const inputValue = document.getElementById("inputSearch");

@@ -14,54 +14,77 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   </head>
   <body>
-    <div class="widget">
-      <form type="submit" id="form">
-        <input type="search" placeholder="Enter a City name" id="inputSearch" />
-        <button type="submit" id="btnImg">
-          <img src="images/search-icon.png" />
-        </button>
-      </form>
-      <div class="flex">
-        <div class="panel">
-          <div class="date"></div>
-          <div id="city">Karachi</div>
-          <div class="temp">
+    <main class="main_Container">
+      <div class="widget">
+        <form type="submit" id="form">
+          <input
+            type="search"
+            placeholder="Enter a City name"
+            id="inputSearch"
+          />
+          <button type="submit" id="btnImg">
+            <img src="images/search-icon.png" />
+          </button>
+        </form>
+        <div class="flex">
+          <div class="panel">
+            <div class="date"></div>
+            <!-- <div id="city">Karachi</div> -->
             <p id="weatherCondi">cloudy</p>
-            <img
-              src="weatherConditionImg/clear-day.svg"
-              id="cloudImg"
-              width="80"
-            />
-            <span id="temperature">23</span>&deg;
+            <div class="temp">
+              <div class="temperature">
+                <span id="temperature">23</span>&deg;
+              </div>
+              <div>
+                <img
+                  src="weatherConditionImg/clear-day.svg"
+                  id="cloudImg"
+                  width="80"
+                />
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <!-- <div class="right-panel panel">
+            <img src="images/mazar-e-quaid.png" alt="" width="250px" />
+          </div> -->
+        </div>
+        <div class="tempContainer flex">
+          <div>
+            <div>Feel Like</div>
+            <div><img src="images/global-warming.gif" alt="" /></div>
+            <div id="feel">17.9</div>
+          </div>
+          <div>
+            <div>Wind</div>
+            <div><img src="images/wind.gif" alt="" /></div>
+            <div id="wind">4.12</div>
+          </div>
+          <div>
+            <div>Humidity</div>
+            <div><img src="images/drop.gif" alt="" /></div>
+            <div id="humidity">77</div>
+          </div>
+          <div>
+            <div>Visibility</div>
+            <div><img src="images/eye.gif" alt="" /></div>
+            <div id="visibility">2</div>
           </div>
         </div>
-        <div class="right-panel panel">
-          <img src="images/mazar-e-quaid.png" alt="" width="250px" />
-        </div>
       </div>
-      <div class="tempContainer flex">
-        <div>
-          <div>Feel Like</div>
-          <div><img src="images/global-warming.gif" alt="" /></div>
-          <div id="feel">17.9</div>
-        </div>
-        <div>
-          <div>Wind</div>
-          <div><img src="images/wind.gif" alt="" /></div>
-          <div id="wind">4.12</div>
-        </div>
-        <div>
-          <div>Humidity</div>
-          <div><img src="images/drop.gif" alt="" /></div>
-          <div id="humidity">77</div>
-        </div>
-        <div>
-          <div>Visibility</div>
-          <div><img src="images/eye.gif" alt="" /></div>
-          <div id="visibility">2</div>
-        </div>
+      <div class="discreption">
+        <h1 id="city">KARACHI</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          accusantium error inventore eius consequatur repellat suscipit,
+          deserunt aspernatur nisi ducimus ad veniam similique excepturi ratione
+          esse, rem ea nam quidem.>Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores accusantium error inventore eius consequatur
+          repellat suscipit, deserunt aspernatur nisi ducimus ad veniam
+          similique excepturi ratione esse, rem ea nam quidem.>Lorem, ipsum
+        </p>
       </div>
-    </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>

@@ -10,42 +10,58 @@ body {
   padding: 0;
   outline: none;
 }
-
-.widget {
-  position: relative;
-  width: 355px;
-  margin: 100px auto;
+.main_Container {
+  width: 765px;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
   background-color: #fcfdfd;
   border-radius: 9px;
-  padding: 25px;
-  padding-right: 30px;
   box-shadow: 0px 31px 35px -26px #080c21;
   overflow: hidden;
 }
-
+.widget,
+.discreption {
+  padding: 25px 25px 30px;
+  position: relative;
+  width: 330px;
+  border-right: 5px double rgba(0, 0, 0, 0.5);
+}
+.discreption {
+  margin-top: 10%;
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+}
+.discreption > h1 {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 3em;
+  text-transform: uppercase;
+}
 .date {
   font-size: 14px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
-  padding: 0px 38px 10px;
-}
-
-#city {
-  font-size: 21px;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding-top: 5px;
-  color: rgba(0, 0, 0, 0.7);
+  padding: 0px 38px 20px;
+  width: 270px;
 }
 
 .temp {
-  font-size: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+}
+.temperature {
+  font-size: 110px;
   color: rgba(0, 0, 0, 0.9);
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .flex {
   display: flex;
+  justify-content: center;
 }
 
 .right-panel {
@@ -67,6 +83,7 @@ body {
 }
 img#cloudImg {
   filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.6));
+  width: 120px;
 }
 #form {
   position: relative;
@@ -90,8 +107,10 @@ img#cloudImg {
   display: none;
 }
 #weatherCondi {
-  font-size: 14px;
+  padding: 0px 15px 15px;
+  font-size: 25px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5);
-  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
 }
