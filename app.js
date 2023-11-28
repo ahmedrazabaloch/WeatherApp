@@ -23,7 +23,6 @@ inputValue.addEventListener("input", () => {
     }
   }
 });
-
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
   btnImg.style.display = "none";
@@ -120,6 +119,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
 
 // Get Current Loction Then Show There Weather Forecast
 let navi = navigator.geolocation.getCurrentPosition((location) => {
+  console.log(location);
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
   const locationAPI = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=230d49f0d859fc7a6b1ae5ce71bc7c1f`;
@@ -161,18 +161,14 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
       } else {
         cloudImg.src = "./weatherConditionImg/clear-day.svg";
       }
+      // wikipedia summery
+      const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${name}`;
+      fetch(wikipediaUrl)
+        .then((response) => response.json())
+        .then((wikiData) => {
+          document.getElementById("summery").innerHTML = wikiData.extract;
+        })
+        .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
 });
-
-// const cityName = "New York";
-// const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cityName)}`;
-
-// fetch(wikipediaUrl)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(`Introduction for ${cityName}:\n${data.extract}`);
-//   })
-//   .catch(error => {
-//     console.error(`Error fetching Wikipedia data: ${error}`);
-//   });

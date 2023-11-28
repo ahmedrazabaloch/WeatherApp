@@ -25,7 +25,7 @@ body {
   padding: 25px 25px 30px;
   position: relative;
   width: 330px;
-  border-right: 5px double rgba(0, 0, 0, 0.5);
+  border-right: 5px double rgba(0, 0, 0, 0.3);
 }
 .discreption {
   margin-top: 10%;
@@ -94,7 +94,7 @@ img#cloudImg {
   padding: 10px 50px 10px 10px;
   border-radius: 5px;
   outline: none;
-  border: 1px solid #4bd1d1;
+  border: 1px solid #000;
   margin-bottom: 25px;
 }
 #form button {
