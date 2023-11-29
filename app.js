@@ -95,7 +95,6 @@ document.getElementById("form").addEventListener("submit", (event) => {
         fetch(wikipediaUrl)
           .then((response) => response.json())
           .then((wikiData) => {
-            console.log(wikiData);
             const wikiCityName = wikiData.extract.slice(0, 602);
             document.getElementById("summery").innerHTML =
               wikiCityName + " ......";
