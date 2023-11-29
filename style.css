@@ -24,7 +24,6 @@ body {
 .discreption {
   padding: 25px 25px 30px;
   position: relative;
-  /* width: 330px; */
   border-right: 5px double rgba(0, 0, 0, 0.3);
 }
 .discreption {
@@ -145,6 +144,13 @@ img#cityImg {
     padding: 20px;
   }
   img#cityImg {
+    height: unset;
+  }
+  .jsCityImg {
     height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
   }
 }
