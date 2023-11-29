@@ -118,6 +118,8 @@ img#cloudImg {
 }
 img#cityImg {
   height: 100px;
+}
+.jsCityImg {
   width: 100%;
   object-fit: cover;
   object-position: top center;

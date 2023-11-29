@@ -55,6 +55,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
     });
     weatherData
       .then((data) => {
+        document.getElementById("cityImg").classList.add("jsCityImg");
         document.getElementById("city").innerHTML = data.name || "Karachi";
         document.getElementById("temperature").innerHTML = Math.round(
           data.main.temp
@@ -137,8 +138,8 @@ let navi = navigator.geolocation.getCurrentPosition((location) => {
   fetch(locationAPI)
     .then((res) => res.json())
     .then((data) => {
+      // document.getElementById("cityImg").classList.remove("jsCityImg");
       let { main, wind, visibility, name } = data;
-
       document.getElementById("city").innerHTML = name || "Karachi";
       document.getElementById("temperature").innerHTML = Math.round(main.temp);
       document.getElementById("humidity").innerHTML = main.humidity;
