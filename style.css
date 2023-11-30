@@ -85,16 +85,19 @@ img#cloudImg {
 #form {
   position: relative;
 }
-#form input {
+#inputSearch {
   width: 100%;
   font-size: 1em;
   padding: 10px 50px 10px 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   outline: none;
   border: 1px solid #000;
   margin-bottom: 25px;
 }
-#form button {
+#inputSearch::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+#btnImg {
   background-color: transparent;
   border: none;
   cursor: pointer;
