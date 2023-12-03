@@ -3,6 +3,7 @@
 body {
   background-color: #212121;
   font-family: "Montserrat", sans-serif;
+  overflow: hidden;
 }
 
 * {
@@ -10,6 +11,44 @@ body {
   padding: 0;
   outline: none;
 }
+.cloud1,
+.cloud2,
+.cloud3 {
+  background-size: cover;
+  position: absolute;
+  animation: moveCloud 30s linear infinite;
+}
+.cloud1 {
+  width: 450px;
+  height: 450px;
+  background-image: url("images/cloud_moving.png");
+  top: 35%;
+  left: -200px;
+}
+.cloud2 {
+  width: 250px;
+  height: 250px;
+  background-image: url("images/cloud_moving.png");
+  top: 35%;
+  left: -250px;
+}
+.cloud3 {
+  width: 650px;
+  height: 650px;
+  background-image: url("images/cloud_moving.png");
+  top: 35%;
+  left: -700px;
+}
+
+@keyframes moveCloud {
+  from {
+    transform: translateX(0px); 
+  }
+  to {
+    transform: translateX(110vw); 
+  }
+} 
+
 .main_Container {
   width: 765px;
   display: flex;
