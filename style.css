@@ -13,41 +13,47 @@ body {
 }
 .cloud1,
 .cloud2,
-.cloud3 {
+.cloud3,
+.cloud4,
+.cloud5 {
+  width: 650px;
+  height: 650px;
   background-size: cover;
   position: absolute;
-  animation: moveCloud 30s linear infinite;
+  animation: moveCloud 10s linear infinite;
+  background-size: cover;
+  position: absolute;
+  top: 30%;
 }
 .cloud1 {
-  width: 450px;
-  height: 450px;
   background-image: url("images/cloud_moving.png");
-  top: 35%;
   left: -200px;
 }
 .cloud2 {
-  width: 250px;
-  height: 250px;
   background-image: url("images/cloud_moving.png");
-  top: 35%;
-  left: -250px;
+  left: -500px;
 }
 .cloud3 {
-  width: 650px;
-  height: 650px;
   background-image: url("images/cloud_moving.png");
-  top: 35%;
-  left: -700px;
+  left: -800px;
+}
+.cloud4 {
+  background-image: url("images/cloud_moving.png");
+  left: -1100px;
+}
+.cloud5 {
+  background-image: url("images/cloud_moving.png");
+  left: -1500px;
 }
 
 @keyframes moveCloud {
   from {
-    transform: translateX(0px); 
+    transform: translateX(0px);
   }
   to {
-    transform: translateX(110vw); 
+    transform: translateX(110vw);
   }
-} 
+}
 
 .main_Container {
   width: 765px;
