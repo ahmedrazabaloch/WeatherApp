@@ -11,50 +11,35 @@ body {
   padding: 0;
   outline: none;
 }
-.cloud1,
-.cloud2,
-.cloud3,
-.cloud4,
-.cloud5 {
-  width: 650px;
-  height: 650px;
-  background-size: cover;
+.clouds {
   position: absolute;
-  animation: moveCloud 10s linear infinite;
-  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.clouds img {
   position: absolute;
-  top: 30%;
-}
-.cloud1 {
-  background-image: url("images/cloud_moving.png");
-  left: -200px;
-}
-.cloud2 {
-  background-image: url("images/cloud_moving.png");
-  left: -500px;
-}
-.cloud3 {
-  background-image: url("images/cloud_moving.png");
-  left: -800px;
-}
-.cloud4 {
-  background-image: url("images/cloud_moving.png");
-  left: -1100px;
-}
-.cloud5 {
-  background-image: url("images/cloud_moving.png");
-  left: -1500px;
+  bottom: 0;
+  max-width: 100%;
+  animation: animate calc(30s * var(--i)) linear infinite;
 }
 
-@keyframes moveCloud {
-  from {
-    transform: translateX(0px);
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
   }
-  to {
-    transform: translateX(110vw);
+  100% {
+    transform: translateX(100%);
   }
 }
 
+#container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
 .main_Container {
   width: 765px;
   display: flex;
@@ -65,7 +50,6 @@ body {
   box-shadow: 0px 31px 35px -26px #080c21;
   overflow: hidden;
   position: relative;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
 }
 .widget,
 .discreption {
